@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import * as actions from '../actions/index';
 import Gallery from '../components/gallery';
+import Header from '../components/header';
 
 class App extends Component {
 
@@ -11,7 +12,7 @@ class App extends Component {
         const { images, actions } = this.props;
         return (
             <div>
-                <h1>React Gallery</h1>
+                <Header />
                 <Gallery
                     images={images}
                     actions={actions}

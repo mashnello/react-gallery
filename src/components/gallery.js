@@ -14,9 +14,11 @@ class Gallery extends Component {
         const { images } = this.props;
         return images && Object.keys(images).map(key => {
             return (
-                <div key={key}>
-                    <h3>{images[key].name}</h3>
-                    <img src={images[key].src} />
+                <div className="gallery-item col-sm-12 col-md-4" key={key}>
+                    <h4>{images[key].name}</h4>
+                    <img
+                        src={images[key].src}
+                    />
                 </div>
             );
         });
@@ -24,7 +26,7 @@ class Gallery extends Component {
 
     render() {
         return (
-            <div>
+            <div className="gallery">
                { this.renderImages() }
             </div>
         );
