@@ -28,3 +28,55 @@
 .gallery img {
     width: 100%;
 }
+.tooltip-icon {
+    width: 25px;
+    height: 26px;
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    color: #000;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 25px;
+    font-family: serif;
+}
+.tooltip-icon:hover+.tooltip-content {
+    display: block;
+}
+.tooltip-content {
+    display: none;
+    background-color: #524343;
+    opacity: 0.8;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    top: 65px;
+    left: 20px;
+    width: calc(100% - 40px);
+    text-align: center;
+    font-size: 1rem;
+}
+.tooltip-content:before {
+    bottom: 100%;
+    right: 14px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(82, 67, 67, 0);
+    border-bottom-color: #524343;
+    border-width: 10px;
+    margin-left: -10px;
+}
+.tooltip-content:empty {
+    display: none;
+}
