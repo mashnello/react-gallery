@@ -5,7 +5,7 @@ const INITIAL_STATE = { all: {}, image: null };
 export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
         case GET_IMAGES:
-            return { ...state, all: action.payload };
+            return { ...state, all: action.payload.data };
         default:
             return state;
     }
