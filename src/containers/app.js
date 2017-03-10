@@ -23,9 +23,8 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { images } = state;
     return {
-        images
+        images: state.images.all
     };
 }
 

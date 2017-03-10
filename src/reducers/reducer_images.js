@@ -1,12 +1,11 @@
 import { GET_IMAGES } from '../actions/index';
 
-export default (state = {}, action) => {
+const INITIAL_STATE = { all: {}, image: null };
+
+export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
         case GET_IMAGES:
-            return Object.assign(
-                ...state,
-                action.payload
-            );
+            return { ...state, all: action.payload };
         default:
             return state;
     }
