@@ -3,20 +3,15 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as actions from '../actions/index';
-import Gallery from '../components/gallery';
 import Header from '../components/header';
 
-class App extends Component {
+class Admin extends Component {
 
     render() {
         const { images, actions } = this.props;
         return (
             <div>
-                <Header />
-                <Gallery
-                    images={images}
-                    actions={actions}
-                />
+                THIS IS ADMIN
             </div>
         );
     };
@@ -37,4 +32,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(App);
+)(Admin);

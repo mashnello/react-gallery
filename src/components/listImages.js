@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 
 import Tooltip from './tooltip';
 
-class Gallery extends Component {
+class ListImages extends Component {
     componentWillMount() {
         this.props.actions.getImages();
     }
@@ -38,4 +38,4 @@ class Gallery extends Component {
     };
 }
 
-export default Gallery;
+export default ListImages;
