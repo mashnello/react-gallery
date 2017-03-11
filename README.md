@@ -23,16 +23,3 @@ Before you start, please provide a list of technologies you will use and an esti
 ###Estimate and technologies###
 React, Redux, Babel, Webpack, React-Router
 Estimate: 24h
-
-<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyB__wcPcQIUDDzzTg_y5DY9Kf-ICgVObhA",
-    authDomain: "react-gallery.firebaseapp.com",
-    databaseURL: "https://react-gallery.firebaseio.com",
-    storageBucket: "react-gallery.appspot.com",
-    messagingSenderId: "756638637005"
-  };
-  firebase.initializeApp(config);
-</script>

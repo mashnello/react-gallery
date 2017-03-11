@@ -11,6 +11,7 @@ class Admin extends Component {
         const { images, actions } = this.props;
         return (
             <div>
+                <Header />
                 THIS IS ADMIN
             </div>
         );

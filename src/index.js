@@ -5,7 +5,6 @@ import { Router, browserHistory } from 'react-router';
 import { createStore, applyMiddleware } from 'redux';
 
 import routes from './routes';
-import Gallery from './containers/gallery';
 import reducers from './reducers';
 import promise from 'redux-promise';
 
