@@ -9,7 +9,8 @@
     display: block;
     clear: both;
 }
-.gallery {
+.gallery-admin img {
+    width: 250px;
 }
 .gallery:after {
     clear: both;

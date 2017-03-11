@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import * as actions from '../actions/index';
 import Header from '../components/header';
+import ListImagesAdmin from '../components/listImagesAdmin';
 
 class Admin extends Component {
 
@@ -12,7 +13,10 @@ class Admin extends Component {
         return (
             <div>
                 <Header />
-                THIS IS ADMIN
+                <ListImagesAdmin
+                    images={images}
+                    actions={actions}
+                />
             </div>
         );
     };
