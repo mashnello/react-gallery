@@ -40,32 +40,32 @@ class ImageDetails extends Component {
               onSubmit={this.onFormSubmit}
               id={id}
               className='image-details'>
-              <h5 className="media-heading">Image name</h5>
+              <p className="media-heading">Image name</p>
                 <input
                   onChange={this.onInputChange}
                   value={this.state.name}
                   placeholder={name}
                   data-id="name"
-                  className='form-control'
+                  className='form-control form-control-sm'
                   type='text'
                 />
-                <h5 className="media-heading">Tooltip text</h5>
+                <p className="media-heading">Tooltip text</p>
                 <input
                   onChange={this.onInputChange}
                   value={this.state.tooltip}
                   placeholder={tooltip}
                   data-id="tooltip"
-                  className='form-control'
+                  className='form-control form-control-sm'
                   type='text'
                 />
                 <button
                   type='submit'
-                  className='btn btn-primary'>
+                  className='btn btn-sm btn-primary'>
                   Save
                 </button>
                 <button
                   onClick={this.onButtonClick}
-                  className='btn btn-danger'>
+                  className='btn btn-sm btn-danger'>
                   Delete
                 </button>
             </form>

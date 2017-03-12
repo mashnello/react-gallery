@@ -42,8 +42,7 @@ class ImageUpload extends Component {
     render() {
         const { imagePreviewUrl } = this.state;
         const imagePreview = imagePreviewUrl ?
-            <img src={imagePreviewUrl} /> :
-            <div className="preview-text">Please select an Image for Preview</div>;
+            <img src={imagePreviewUrl} /> : '';
 
         return (
             <div className="container">
@@ -63,17 +62,17 @@ class ImageUpload extends Component {
                     <button
                         type='submit'
                         onClick={this.onFormSubmit}
-                        className='btn btn-primary'>
+                        className='btn btn-sm btn-primary'>
                         Upload
                     </button> :
                     <label
                         htmlFor="uploader"
-                        className='btn btn-primary'>
+                        className='btn btn-sm btn-primary'>
                         Upload Image
                     </label>
                     }
                 </form>
-                <div className="img-preview">
+                <div className="image-preview">
                     { imagePreview }
                 </div>
             </div>
