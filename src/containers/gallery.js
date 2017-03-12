@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as actions from '../actions/index';
-import ListImages from '../components/listImages';
 import Header from '../components/header';
+import ListImages from '../components/listImages';
 
 class Gallery extends Component {
 

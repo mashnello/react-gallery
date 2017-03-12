@@ -16,9 +16,9 @@ class ImageDetails extends Component {
     onInputChange = (e) => {
         const id = e.target.dataset.id,
             value = e.target.value;
-            this.setState({
-                [id === 'name' ? 'name' : 'tooltip']: value
-            });
+        this.setState({
+            [id === 'name' ? 'name' : 'tooltip']: value
+        });
     }
 
     onFormSubmit = (e) => {
@@ -44,6 +44,7 @@ class ImageDetails extends Component {
                   className='form-control'
                   type='text'
                 />
+                <h5 className="media-heading">Tooltip text</h5>
                 <input
                   onChange={this.onInputChange}
                   value={this.state.tooltip}
