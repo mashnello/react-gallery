@@ -7,7 +7,7 @@ let data = {
     "6987155412346": {
         "src": "/src/images/sofa.jpg",
         "name": "Sofa",
-        "tooltip": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, necessitatibus."
+        "tooltip": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     "6987155412347": {
         "src": "/src/images/kermit.jpg",

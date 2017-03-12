@@ -49,7 +49,7 @@ class ImageUpload extends Component {
                 <form
                   onSubmit={ this.onFormSubmit }
                   id='image-upload'
-                  className='form-inline pull-xs-right image-upload'>
+                  className='form-inline pull-xs-right image-upload clearfix'>
                     <input
                         onChange={this.onImageChange}
                         className='form-control'

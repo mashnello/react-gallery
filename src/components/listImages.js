@@ -31,7 +31,7 @@ class ListImages extends Component {
 
     render() {
         return (
-            <div className='gallery'>
+            <div className='gallery clearfix'>
                { this.renderImages() }
             </div>
         );

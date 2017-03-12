@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 class ImageDetails extends Component {
     constructor(props) {
         super(props);
-        this.state = { name: '', tooltip: '' };
+        this.state = { name: '', tooltip: '', editing: false };
     }
 
     static propTypes = {
@@ -21,54 +21,94 @@ class ImageDetails extends Component {
         });
     }
 
-    onButtonClick = (e) => {
+    onRemoveClick = (e) => {
         e.preventDefault();
         confirm('Do you really want to delete the image?') &&
         this.props.actions.deleteImage(this.props.id);
+    }
+
+    onEditClick = (e) => {
+        e.preventDefault();
+        const { name, tooltip } = this.props;
+        this.setState({ name, tooltip, editing: true });
+    }
+
+    onCancelClick = (e) => {
+        e.preventDefault();
+        const { name, tooltip } = this.props;
+        this.setState({ name, tooltip, editing: false });
     }
 
     onFormSubmit = (e) => {
         e.preventDefault();
         const { name, tooltip } = this.state;
         this.props.actions.editImage(this.props.id, name, tooltip);
-        this.setState({ name: '', tooltip: '' });
+        this.setState({ name: '', tooltip: '', editing: false });
+
     }
 
     render() {
         const {id, name, tooltip} = this.props;
+        const { editing } = this.state;
         return (
             <form
                 onSubmit={this.onFormSubmit}
                 id={id}
                 className='image-details'>
                 <p className='media-heading'>Image name</p>
-                <input
-                    onChange={this.onInputChange}
-                    value={this.state.name}
-                    placeholder={name}
-                    data-id='name'
-                    className='form-control form-control-sm'
-                    type='text'
-                />
+
+                {editing ? (<input
+                                onChange={this.onInputChange}
+                                value={this.state.name}
+                                data-id='name'
+                                className='form-control form-control-sm'
+                                type='text'
+                                maxLength='16'
+                            />) :
+                    (name ? <h4>{name}</h4> :
+                        <a href='#' onClick={this.onEditClick}>Add name</a>)
+                }
+
                 <p className='media-heading'>Tooltip text</p>
-                <input
-                    onChange={this.onInputChange}
-                    value={this.state.tooltip}
-                    placeholder={tooltip}
-                    data-id='tooltip'
-                    className='form-control form-control-sm'
-                    type='text'
-                />
-                <button
-                    type='submit'
-                    className='btn btn-sm btn-primary'>
-                    Save
-                </button>
-                <button
-                    onClick={this.onButtonClick}
-                    className='btn btn-sm btn-danger'>
-                    Delete
-                </button>
+                {editing ? (<textarea
+                                onChange={this.onInputChange}
+                                value={this.state.tooltip}
+                                data-id='tooltip'
+                                className='form-control form-control-sm'
+                                type='text'
+                                maxLength='80'
+                            />) :
+                    (tooltip ? <p className='tooltip-text'>{tooltip}</p> :
+                        <a href='#' onClick={this.onEditClick}>Add tooltip text</a>)
+                }
+
+
+                    {editing ?
+                        <div>
+                            <button
+                                onClick={this.onCancelClick}
+                                className='btn btn-sm btn-secondary'>
+                                Cancel
+                            </button>
+                            <button
+                                type='submit'
+                                className='btn btn-sm btn-primary'>
+                                Save
+                            </button>
+                        </div> :
+                        <div>
+                            <button
+                                onClick={this.onRemoveClick}
+                                className='btn btn-sm btn-danger'>
+                                Delete
+                            </button>
+                            <button
+                                onClick={this.onEditClick}
+                                className='btn btn-sm btn-info'>
+                                Edit
+                            </button>
+                        </div>
+                    }
             </form>
         );
     };

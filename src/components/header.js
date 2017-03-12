@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const Header = () => {
     const path = location.pathname;
     return (
-        <div className='header'>
+        <div className='header clearfix'>
             <h1 className='pull-xs-left'>
                 React Gallery
             </h1>
