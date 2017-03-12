@@ -1,7 +1,7 @@
-import { GET_IMAGES, EDIT_IMAGE, UPLOAD_IMAGE } from '../actions/index';
+import { GET_IMAGES, EDIT_IMAGE, UPLOAD_IMAGE, DELETE_IMAGE } from '../actions/index';
 
 import { setData } from '../services/data'; // temp
-const INITIAL_STATE = { all: {}, image: null };
+const INITIAL_STATE = { all: {} };
 
 export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
@@ -49,6 +49,14 @@ export default (state = INITIAL_STATE, action) => {
                         src: action.src
                     }
                 }
+            };
+        case DELETE_IMAGE:
+            let copy = Object.assign({}, state.all);
+            delete copy[action.id];
+            setData(copy); // temp for local data update 
+            return {
+                ...state,
+                all: copy
             };
         default:
             return state;

@@ -21,6 +21,11 @@ class ImageDetails extends Component {
         });
     }
 
+    onButtonClick = (e) => {
+        e.preventDefault();
+        this.props.actions.deleteImage(this.props.id);
+    }
+
     onFormSubmit = (e) => {
         e.preventDefault();
         const { name, tooltip } = this.state;
@@ -57,6 +62,11 @@ class ImageDetails extends Component {
                   type='submit'
                   className='btn btn-primary'>
                   Save
+                </button>
+                <button
+                  onClick={this.onButtonClick}
+                  className='btn btn-danger'>
+                  Delete
                 </button>
             </form>
         );

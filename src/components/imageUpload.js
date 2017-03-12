@@ -10,7 +10,7 @@ class ImageUpload extends Component {
         actions: PropTypes.object.isRequired
     }
 
-    onFormSubmit(e) {
+    onFormSubmit = (e) => {
         e.preventDefault();
         const { lastModified, name } = this.state.file;
         const src = this.state.imagePreviewUrl;
@@ -23,7 +23,7 @@ class ImageUpload extends Component {
         }
     }
 
-    onImageChange(e) {
+    onImageChange = (e) => {
         e.preventDefault();
 
         const reader = new FileReader();
@@ -48,11 +48,11 @@ class ImageUpload extends Component {
         return (
             <div className="container">
                 <form
-                  onSubmit={ (e) => this.onFormSubmit(e)}
+                  onSubmit={ this.onFormSubmit }
                   id="image-upload"
                   className='form-inline pull-xs-right image-upload'>
                     <input
-                        onChange={ (e) => this.onImageChange(e) }
+                        onChange={this.onImageChange}
                         className='form-control'
                         accept='image/jpeg,image/png'
                         id='uploader'
@@ -62,7 +62,7 @@ class ImageUpload extends Component {
                     {this.state.file ?
                     <button
                         type='submit'
-                        onClick={ (e) => this.onFormSubmit(e)}
+                        onClick={this.onFormSubmit}
                         className='btn btn-primary'>
                         Upload
                     </button> :
