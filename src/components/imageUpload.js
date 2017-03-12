@@ -45,10 +45,10 @@ class ImageUpload extends Component {
             <img src={imagePreviewUrl} /> : '';
 
         return (
-            <div className="container">
+            <div className='container'>
                 <form
                   onSubmit={ this.onFormSubmit }
-                  id="image-upload"
+                  id='image-upload'
                   className='form-inline pull-xs-right image-upload'>
                     <input
                         onChange={this.onImageChange}
@@ -66,13 +66,13 @@ class ImageUpload extends Component {
                         Upload
                     </button> :
                     <label
-                        htmlFor="uploader"
+                        htmlFor='uploader'
                         className='btn btn-sm btn-primary'>
                         Upload Image
                     </label>
                     }
                 </form>
-                <div className="image-preview">
+                <div className='image-preview'>
                     { imagePreview }
                 </div>
             </div>

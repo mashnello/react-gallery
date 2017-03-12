@@ -6,8 +6,8 @@ import Gallery from './containers/gallery';
 import Admin from './containers/admin';
 
 export default (
-    <Route path="/" component={App}>
+    <Route path='/' component={App}>
         <IndexRoute component={Gallery} />
-        <Route path="/admin" component={Admin} />
+        <Route path='/admin' component={Admin} />
     </Route>
 );

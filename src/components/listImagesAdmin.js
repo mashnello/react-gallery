@@ -17,13 +17,13 @@ class ListImagesAdmin extends Component {
         return images && Object.keys(images).map(key => {
             const image = images[key];
             return (
-                <li className="media" key={key}>
-                    <div className="media-left">
-                        <a href="#">
-                            <img className="media-object" src={image.src} />
+                <li className='media' key={key}>
+                    <div className='media-left'>
+                        <a href='#'>
+                            <img className='media-object' src={image.src} />
                         </a>
                     </div>
-                    <div className="media-body">
+                    <div className='media-body'>
                         <ImageDetails
                             actions={actions}
                             id={key}
@@ -38,8 +38,8 @@ class ListImagesAdmin extends Component {
 
     render() {
         return (
-            <div className="gallery-admin container">
-                <ul className="media-list">
+            <div className='gallery-admin container'>
+                <ul className='media-list'>
                    { this.renderImagesList() }
                 </ul>
             </div>

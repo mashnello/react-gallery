@@ -23,6 +23,7 @@ class ImageDetails extends Component {
 
     onButtonClick = (e) => {
         e.preventDefault();
+        confirm('Do you really want to delete the image?') &&
         this.props.actions.deleteImage(this.props.id);
     }
 
@@ -37,36 +38,36 @@ class ImageDetails extends Component {
         const {id, name, tooltip} = this.props;
         return (
             <form
-              onSubmit={this.onFormSubmit}
-              id={id}
-              className='image-details'>
-              <p className="media-heading">Image name</p>
+                onSubmit={this.onFormSubmit}
+                id={id}
+                className='image-details'>
+                <p className='media-heading'>Image name</p>
                 <input
-                  onChange={this.onInputChange}
-                  value={this.state.name}
-                  placeholder={name}
-                  data-id="name"
-                  className='form-control form-control-sm'
-                  type='text'
+                    onChange={this.onInputChange}
+                    value={this.state.name}
+                    placeholder={name}
+                    data-id='name'
+                    className='form-control form-control-sm'
+                    type='text'
                 />
-                <p className="media-heading">Tooltip text</p>
+                <p className='media-heading'>Tooltip text</p>
                 <input
-                  onChange={this.onInputChange}
-                  value={this.state.tooltip}
-                  placeholder={tooltip}
-                  data-id="tooltip"
-                  className='form-control form-control-sm'
-                  type='text'
+                    onChange={this.onInputChange}
+                    value={this.state.tooltip}
+                    placeholder={tooltip}
+                    data-id='tooltip'
+                    className='form-control form-control-sm'
+                    type='text'
                 />
                 <button
-                  type='submit'
-                  className='btn btn-sm btn-primary'>
-                  Save
+                    type='submit'
+                    className='btn btn-sm btn-primary'>
+                    Save
                 </button>
                 <button
-                  onClick={this.onButtonClick}
-                  className='btn btn-sm btn-danger'>
-                  Delete
+                    onClick={this.onButtonClick}
+                    className='btn btn-sm btn-danger'>
+                    Delete
                 </button>
             </form>
         );

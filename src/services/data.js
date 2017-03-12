@@ -60,9 +60,11 @@ let data = {
         "tooltip": "Lorem ipsum dolor sit."
     }
 };
+
 export const setData = (newData) => {
     data = newData;
 }
+
 export const fetchImages = () => {
     return data;
 }
