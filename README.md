@@ -23,3 +23,15 @@ Before you start, please provide a list of technologies you will use and an esti
 ###Estimate and technologies###
 React, Redux, Babel, Webpack, React-Router
 Estimate: 24h
+
+## Installation
+
+```bash
+npm install
+```
+
+## Running Dev Server
+
+```bash
+npm start
+```
