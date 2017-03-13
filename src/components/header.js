@@ -12,7 +12,7 @@ const Header = () => {
                 <Link
                     to={path === '/react-gallery/admin' ? '/react-gallery/' : '/react-gallery/admin'}
                     className='pull-xs-right'>
-                    {path === '/admin' ? 'Gallery' : 'Administrator'}
+                    {path === '/react-gallery/admin' ? 'Gallery' : 'Administrator'}
                 </Link>
             </div>
         </div>
