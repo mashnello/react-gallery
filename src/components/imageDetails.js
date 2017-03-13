@@ -57,33 +57,25 @@ class ImageDetails extends Component {
                 className='image-details'>
                 <p className='media-heading'>Image name</p>
 
-                {editing ? (<input
-                                onChange={this.onInputChange}
-                                value={this.state.name}
-                                data-id='name'
-                                className='form-control form-control-sm'
-                                type='text'
-                                maxLength='16'
-                            />) :
-                    (name ? <h4>{name}</h4> :
-                        <a href='#' onClick={this.onEditClick}>Add name</a>)
-                }
-
-                <p className='media-heading'>Tooltip text</p>
-                {editing ? (<textarea
-                                onChange={this.onInputChange}
-                                value={this.state.tooltip}
-                                data-id='tooltip'
-                                className='form-control form-control-sm'
-                                type='text'
-                                maxLength='80'
-                            />) :
-                    (tooltip ? <p className='tooltip-text'>{tooltip}</p> :
-                        <a href='#' onClick={this.onEditClick}>Add tooltip text</a>)
-                }
-
-
-                    {editing ?
+                {editing ?
+                    (<div>
+                        <input
+                            onChange={this.onInputChange}
+                            value={this.state.name}
+                            data-id='name'
+                            className='form-control form-control-sm'
+                            type='text'
+                            maxLength='16'
+                        />
+                        <p className='media-heading'>Tooltip text</p>
+                        <textarea
+                            onChange={this.onInputChange}
+                            value={this.state.tooltip}
+                            data-id='tooltip'
+                            className='form-control form-control-sm'
+                            type='text'
+                            maxLength='80'>
+                        </textarea>
                         <div>
                             <button
                                 onClick={this.onCancelClick}
@@ -95,7 +87,15 @@ class ImageDetails extends Component {
                                 className='btn btn-sm btn-primary'>
                                 Save
                             </button>
-                        </div> :
+                        </div>
+                    </div>) :
+
+                    (<div>
+                        {name ? <h4>{name}</h4> :
+                        <a href='#' onClick={this.onEditClick}>Add name</a>}
+                        <p className='media-heading'>Tooltip text</p>
+                        {tooltip ? <p className='tooltip-text'>{tooltip}</p> :
+                            <a href='#' onClick={this.onEditClick}>Add tooltip text</a>}
                         <div>
                             <button
                                 onClick={this.onRemoveClick}
@@ -108,7 +108,9 @@ class ImageDetails extends Component {
                                 Edit
                             </button>
                         </div>
-                    }
+                    </div>)
+                }
+
             </form>
         );
     };

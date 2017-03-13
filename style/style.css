@@ -122,4 +122,7 @@
         display: block;
         margin: auto;
     }
+    .header .container {
+        padding: 0;
+    }
 }
