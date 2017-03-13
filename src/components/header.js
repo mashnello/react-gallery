@@ -10,7 +10,7 @@ const Header = () => {
                     React Gallery
                 </h1>
                 <Link
-                    to={path === '/admin' ? '/' : '/admin'}
+                    to={path === '/react-gallery/admin' ? '/react-gallery/' : '/react-gallery/admin'}
                     className='pull-xs-right'>
                     {path === '/admin' ? 'Gallery' : 'Administrator'}
                 </Link>

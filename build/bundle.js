@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
+/******/ 	__webpack_require__.p = "/build/";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -27100,9 +27100,9 @@
 
 	exports.default = _react2.default.createElement(
 	    _reactRouter.Route,
-	    { path: '/', component: _app2.default },
+	    { path: '/react-gallery/', component: _app2.default },
 	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _gallery2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: '/admin', component: _admin2.default })
+	    _react2.default.createElement(_reactRouter.Route, { path: '/react-gallery/admin', component: _admin2.default })
 	);
 
 /***/ },
@@ -28900,7 +28900,7 @@
 	            _react2.default.createElement(
 	                _reactRouter.Link,
 	                {
-	                    to: path === '/admin' ? '/' : '/admin',
+	                    to: path === '/react-gallery/admin' ? '/react-gallery/' : '/react-gallery/admin',
 	                    className: 'pull-xs-right' },
 	                path === '/admin' ? 'Gallery' : 'Administrator'
 	            )
@@ -29635,17 +29635,17 @@
 	                })))
 	            });
 	        case _index.UPLOAD_IMAGE:
-	            (0, _data.setData)(_extends({}, state.all, _defineProperty({}, action.id, {
+	            (0, _data.setData)(_extends(_defineProperty({}, action.id, {
 	                name: action.name,
 	                tooltip: '',
 	                src: action.src
-	            }))); // temp for local data update 
+	            }), state.all)); // temp for local data update 
 	            return _extends({}, state, {
-	                all: _extends({}, state.all, _defineProperty({}, action.id, {
+	                all: _extends(_defineProperty({}, action.id, {
 	                    name: action.name,
 	                    tooltip: '',
 	                    src: action.src
-	                }))
+	                }), state.all)
 	            });
 	        case _index.DELETE_IMAGE:
 	            var copy = Object.assign({}, state.all);
