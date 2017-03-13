@@ -33,22 +33,22 @@ export default (state = INITIAL_STATE, action) => {
             };
         case UPLOAD_IMAGE:
             setData({
-                    ...state.all,
                     [action.id]: {
                         name: action.name,
                         tooltip: '',
                         src: action.src
-                    }
+                    },
+                    ...state.all
                 }); // temp for local data update 
             return {
                 ...state,
                 all: {
-                    ...state.all,
                     [action.id]: {
                         name: action.name,
                         tooltip: '',
                         src: action.src
-                    }
+                    },
+                    ...state.all
                 }
             };
         case DELETE_IMAGE:
