@@ -30,33 +30,33 @@ let data = {
         "tooltip": "Lorem ipsum dolor sit."
     },
     "6987155412357": {
-        "src": "/react-gallery/src/images/luggage.jpg",
-        "name": "Luggage",
+        "src": "/react-gallery/src/images/antique.jpg",
+        "name": "Antique",
         "tooltip": "Lorem ipsum."
     },
     "6987155412358": {
-        "src": "/react-gallery/src/images/sofa.jpg",
-        "name": "Sofa",
+        "src": "/react-gallery/src/images/clown.jpg",
+        "name": "Clown",
         "tooltip": "Lorem ipsum dolor sit amet."
     },
     "9871554123459": {
-        "src": "/react-gallery/src/images/kermit.jpg",
-        "name": "Kermit",
+        "src": "/react-gallery/src/images/fur.jpg",
+        "name": "Fur",
         "tooltip": "Lorem ipsum dolor sit."
     },
     "9871554123460": {
-        "src": "/react-gallery/src/images/yawn.jpg",
-        "name": "Yawning",
+        "src": "/react-gallery/src/images/sad.jpg",
+        "name": "Sad",
         "tooltip": "Lorem ipsum dolor sit."
     },
     "9871554123461": {
-        "src": "/react-gallery/src/images/teddy.jpg",
-        "name": "Teddy",
+        "src": "/react-gallery/src/images/shopping.jpg",
+        "name": "Shopping",
         "tooltip": "Lorem ipsum dolor sit."
     },
     "9871554123462": {
-        "src": "/react-gallery/src/images/alone.jpg",
-        "name": "Alone",
+        "src": "/react-gallery/src/images/sweet.jpg",
+        "name": "Sweet",
         "tooltip": "Lorem ipsum dolor sit."
     }
 };
