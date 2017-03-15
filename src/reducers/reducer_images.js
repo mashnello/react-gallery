@@ -1,6 +1,6 @@
 import { GET_IMAGES, EDIT_IMAGE, UPLOAD_IMAGE, DELETE_IMAGE } from '../actions/index';
 
-import { setData } from '../services/data'; // temp
+import { setData } from '../services/data';
 
 const INITIAL_STATE = { all: {} };
 
@@ -9,7 +9,6 @@ export default (state = INITIAL_STATE, action) => {
         case GET_IMAGES:
             return {
                 ...state,
-                // all: action.payload.data
                 all: action.payload
             };
         case EDIT_IMAGE:
@@ -19,7 +18,7 @@ export default (state = INITIAL_STATE, action) => {
                         name: action.name,
                         tooltip: action.tooltip
                     }
-                }); // temp for local data update 
+                });
             return {
                 ...state,
                 all: {
@@ -39,7 +38,7 @@ export default (state = INITIAL_STATE, action) => {
                         src: action.src
                     },
                     ...state.all
-                }); // temp for local data update 
+                });
             return {
                 ...state,
                 all: {
@@ -54,7 +53,7 @@ export default (state = INITIAL_STATE, action) => {
         case DELETE_IMAGE:
             let copy = Object.assign({}, state.all);
             delete copy[action.id];
-            setData(copy); // temp for local data update 
+            setData(copy);
             return {
                 ...state,
                 all: copy

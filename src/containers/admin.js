@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as actions from '../actions/index';
-import Header from '../components/header';
 import ListImagesAdmin from '../components/listImagesAdmin';
 import ImageUpload from '../components/imageUpload';
 
@@ -13,7 +12,6 @@ class Admin extends Component {
         const { images, actions } = this.props;
         return (
             <div>
-                <Header />
                 <ImageUpload
                     actions={actions}
                 />

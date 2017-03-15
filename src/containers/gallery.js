@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import * as actions from '../actions/index';
-import Header from '../components/header';
 import ListImages from '../components/listImages';
 
 class Gallery extends Component {
@@ -12,7 +11,6 @@ class Gallery extends Component {
         const { images, actions } = this.props;
         return (
             <div>
-                <Header />
                 <ListImages
                     images={images}
                     actions={actions}
