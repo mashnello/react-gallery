@@ -7,7 +7,12 @@ export const UPLOAD_IMAGE = 'UPLOAD_IMAGE';
 export const DELETE_IMAGE = 'DELETE_IMAGE';
 
 export const getImages = () => {
-    const request = fetchImages();
+    const request = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(fetchImages());
+        }, 1000);
+    }).then((data) => data);
+
     return {
         type: GET_IMAGES,
         payload: request

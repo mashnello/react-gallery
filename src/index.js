@@ -9,11 +9,11 @@ import reducers from './reducers';
 import promise from 'redux-promise';
 
 const createStoreWithMiddleware = applyMiddleware(
-    // promise
+    promise
     )(createStore);
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <Router history={browserHistory} routes={routes} />
-  </Provider>
-  , document.getElementById('wrapper'));
+    <Provider store={createStoreWithMiddleware(reducers)}>
+        <Router history={browserHistory} routes={routes} />
+    </Provider>
+    , document.getElementById('wrapper'));
