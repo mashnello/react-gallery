@@ -4,12 +4,12 @@ import Tooltip from './tooltip';
 
 class ListImages extends Component {
     componentWillMount() {
-        this.props.actions.getImages();
+        this.props.getImages();
     }
 
     static propTypes = {
         images: PropTypes.object.isRequired,
-        actions: PropTypes.object.isRequired
+        getImages: PropTypes.func.isRequired
     }
 
     renderImages() {

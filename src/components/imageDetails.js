@@ -10,7 +10,8 @@ class ImageDetails extends Component {
         id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         tooltip: PropTypes.string.isRequired,
-        actions: PropTypes.object.isRequired
+        editImage: PropTypes.func.isRequired,
+        deleteImage: PropTypes.func.isRequired
     }
 
     onInputChange = (e) => {
@@ -24,7 +25,7 @@ class ImageDetails extends Component {
     onRemoveClick = (e) => {
         e.preventDefault();
         confirm('Do you really want to delete the image?') &&
-        this.props.actions.deleteImage(this.props.id);
+        this.props.deleteImage(this.props.id);
     }
 
     onEditClick = (e) => {
@@ -42,7 +43,7 @@ class ImageDetails extends Component {
     onFormSubmit = (e) => {
         e.preventDefault();
         const { name, tooltip } = this.state;
-        this.props.actions.editImage(this.props.id, name, tooltip);
+        this.props.editImage(this.props.id, name, tooltip);
         this.setState({ name: '', tooltip: '', editing: false });
 
     }

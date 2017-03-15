@@ -7,7 +7,7 @@ class ImageUpload extends Component {
     }
 
     static propTypes = {
-        actions: PropTypes.object.isRequired
+        uploadImage: PropTypes.func.isRequired
     }
 
     onFormSubmit = (e) => {
@@ -15,7 +15,7 @@ class ImageUpload extends Component {
         const { lastModified, name } = this.state.file;
         const src = this.state.imagePreviewUrl;
         if (lastModified && name && src) {
-            this.props.actions.uploadImage(lastModified+name, name, src);
+            this.props.uploadImage(lastModified+name, name, src);
             this.setState({
                 file: '',
                 imagePreviewUrl: ''

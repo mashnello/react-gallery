@@ -4,16 +4,18 @@ import ImageDetails from './imageDetails';
 
 class ListImagesAdmin extends Component {
     componentWillMount() {
-        this.props.actions.getImages();
+        this.props.getImages();
     }
 
     static propTypes = {
         images: PropTypes.object.isRequired,
-        actions: PropTypes.object.isRequired
+        getImages: PropTypes.func.isRequired,
+        editImage: PropTypes.func.isRequired,
+        deleteImage: PropTypes.func.isRequired
     }
 
     renderImagesList() {
-        const { images, actions } = this.props;
+        const { images, editImage, deleteImage } = this.props;
         return images && Object.keys(images).map(key => {
             const image = images[key];
             return (
@@ -25,7 +27,8 @@ class ListImagesAdmin extends Component {
                     </div>
                     <div className='media-body'>
                         <ImageDetails
-                            actions={actions}
+                            editImage={editImage}
+                            deleteImage={deleteImage}
                             id={key}
                             name={image.name}
                             tooltip={image.tooltip}

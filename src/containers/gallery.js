@@ -13,7 +13,7 @@ class Gallery extends Component {
             <div>
                 <ListImages
                     images={images}
-                    actions={actions}
+                    getImages={ actions.getImages }
                 />
             </div>
         );

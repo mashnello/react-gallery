@@ -10,14 +10,17 @@ class Admin extends Component {
 
     render() {
         const { images, actions } = this.props;
+        const { getImages, editImage, deleteImage } = actions;
         return (
             <div>
                 <ImageUpload
-                    actions={actions}
+                    uploadImage={ actions.uploadImage }
                 />
                 <ListImagesAdmin
                     images={images}
-                    actions={actions}
+                    getImages={getImages}
+                    editImage={editImage}
+                    deleteImage={deleteImage}
                 />
             </div>
         );
