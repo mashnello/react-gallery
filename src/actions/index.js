@@ -12,7 +12,7 @@ export const getImages = () => {
             resolve(fetchImages());
         }, 1000);
     }).then((data) => data);
-
+console.log(request);
     return {
         type: GET_IMAGES,
         payload: request

@@ -15,7 +15,7 @@ class ImageUpload extends Component {
         const { lastModified, name } = this.state.file;
         const src = this.state.imagePreviewUrl;
         if (lastModified && name && src) {
-            this.props.uploadImage(lastModified+name, name, src);
+            this.props.uploadImage(lastModified + name.replace(/\W/g, ''), name, src);
             this.setState({
                 file: '',
                 imagePreviewUrl: ''
